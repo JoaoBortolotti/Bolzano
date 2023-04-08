@@ -1,48 +1,87 @@
 import java.util.Scanner;
 
+import javax.naming.spi.DirStateFactory.Result;
+
 public class Main {
     
-    private static Scanner scr = new Scanner(System.in);
-    
+private static Scanner scr = new Scanner(System.in);
+private double[] valoresDeX;
+
+    public double calcularFuncao(double resp) {
+        double result = 0;
+        for (int cont = 0; cont < valoresDeX.length; cont++){
+            result += Math.pow(resp, cont) * valoresDeX[cont];
+        }
+        return result;
+    }
+
     public static void main(String[] args) {
+        int epsl, exp, contador;
+        double resp, result;
+
+        Main func = new Main();
+
         System.out.println("Qual valor máximo do seu expoente?");
-        int exp = scr.nextInt() + 1;
+        exp = scr.nextInt() + 1;
 
         System.out.println("Qual o expoente do Épsilon da sua função?");
         System.out.print("10^-");
-        int epsl = scr.nextInt();
-        epsl = -epsl;
-        
-        double valor[] = new double[exp];
-        double variacoes[] = new double[11];
-        
-        /*Pegando os valores dos expoentes*/
-        if(exp <= 11){
-            for (int i = 0; i < valor.length; i++){
-                System.out.println("Insira o valor do x^" + i);
-                valor[i] = scr.nextDouble();                  
+        epsl = -scr.nextInt();
+
+        double[] valoresDeX = new double[exp];
+        double[] variacoes = new double[11];
+        double[] dominio = new double[11];
+
+        /* Pegando os valores dos expoentes */
+        if (exp <= 11) {
+            for (contador = 0; contador < valoresDeX.length; contador++){
+                System.out.println("Insira o valor do x^" + contador);
+                valoresDeX[contador] = scr.nextDouble();                  
             }
-        }else{
+            func.valoresDeX = valoresDeX; // atribuindo o array de expoentes à variável da classe Main
+        } else {
             System.out.println("O expoente deve ser menor que 11");
             System.exit(0); 
         }  
 
-        /*Printando o valor dos expoentes*/
-        for (int i = 0; i < valor.length ; i ++){
-            System.out.println("x^" + i + " = " + valor[i]);
+        /* Printando o valor dos expoentes */
+        for (contador = 0; contador < valoresDeX.length; contador ++){
+            System.out.println("x^" + contador + " = " + valoresDeX[contador]);
         }
 
-        /*Calculando "X" das Funções*/
-        for(int x = 0; x <= 10; x++){
-            int a = x-5;
-            double resultado = 0;
-            for (int i = 0; i < valor.length; i++){
-                resultado += Math.pow(a, i) * valor[i];
+        /* Calculando "X" das Funções */
+        for (contador = 0; contador <= 10; contador++){
+            resp = contador - 5;
+            result = func.calcularFuncao(resp);
+            variacoes[contador] = result;
+        }
+
+        /* Capturando Intervalos */
+        for (int i = 1; i < variacoes.length; i++) {
+            if ((variacoes[i] > 0 && variacoes[i-1] < 0) || (variacoes[i] < 0 && variacoes[i-1] > 0) || (variacoes[i] == 0 && variacoes[i-1] < 0) || (variacoes[i] < 0 && variacoes[i-1] == 0)) {
+                System.out.println("[Houve troca de sinal]");
+                        
             }
-            variacoes[x] = resultado;
-            System.out.println("Valor de x = " + a + " : " + variacoes[x]);
+            System.out.println(variacoes[i]);        
         }
 
-        /*Capturando Intervalos */
+        System.out.println("-------------------------------------------------------------------------------------");
+
+        for (int a = 1; a < dominio.length; a++){
+            System.out.println(dominio[a]);
+        }
+        
     }
 }
+
+/*
+res = (xa-xb)/2
+res = Aplica na Função que retorna x;
+If(xb > 0){
+    xa = xb;
+}else if(xb > 0){
+    xb = x;
+}
+
+
+ */
