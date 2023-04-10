@@ -30,7 +30,7 @@ public class Main {
     {
         int value = this.lerInt("Qual o expoente do Épsilon da sua função? \n 1x10^-");
 
-        return Math.pow(10, -value);
+        return 1 * Math.pow(10, -value);
     }
 
     public static void main(String[] args) {
@@ -53,8 +53,7 @@ public class Main {
         exp = 1 + func.lerInt("Qual o valor máximo do seu expoente?");
         epsl = func.lerEpsilon();
 
-
-    
+        
         double[] valores = new double[max + nmin];
         double[] valoresDeX = new double[exp];
         double[] variacoes = new double[11];
