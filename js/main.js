@@ -1,5 +1,7 @@
 
 function calcular(){
+    document.getElementById("resultado").removeChild(li);
+
     let contador, a = 0;
     let exp = parseInt(document.getElementById("potencia").value);
     let epsl = Math.abs(parseInt(document.getElementById("epls").value));
