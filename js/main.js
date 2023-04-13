@@ -18,10 +18,10 @@ function calcular(){
     }
     
     epsl = Math.pow(10, -epsl);
-    const valores = new Array(11);
+    const valores = new Array(2001);
     const variacoes = new Array(exp + 1);
-    const dominioB = new Array(22);
-    const dominioA = new Array(22);
+    const dominioB = new Array(4002);
+    const dominioA = new Array(4002);
 
     for (contador = 0; contador < valores.length; ++contador) {
         valores[contador] = contador -5;
