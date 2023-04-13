@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Calculadora de Bolzano</title>
+        <link rel="stylesheet" href="estilo.css">
+    </head>
+    <body>
+        <div id="container">
+            <div id="cabecalho">
+                <h2>Calculadora Bolzano - Diogo Vanzo e João Marcos</h2>
+            </div>
+            <div id="box">
+                <div class="centraliza">
+                    <h2 id="top">Épislon = 10^- <input type="text" name="elpilon" id="epls" class="purple_box"></h2>
+                    <h2 id="separ">Valor Máximo da Potência = <input type="text" name="potência" id="potencia" class="purple_box"></h2>
+                </div>
+                <div class="centraliza">
+                    <h2 id="valores">Digite os Valores de X</h2>
+                </div>
+                <div class="centraliza">
+                    <input type="text" name="valx" id="valx" class="purple_box_mor">
+                </div>
+                <div class="centraliza">
+                    <input type="button" value="Calcular" id="calcular" onclick="calcular()">
+                </div>
+                <div id="linha_horizontal"></div>
+
+                <div id="socorro">
+                    <ul id="resultado">
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </body>
+
+    <script src="main.js"></script>
+</html>

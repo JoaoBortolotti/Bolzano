@@ -1,0 +1,100 @@
+body{
+    background-color: #b1b1b1;
+}
+input{
+    background: #c8a6ff;
+    border-radius: 5px;
+    color: white;
+}
+
+.center-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+  }
+
+
+#conainer{
+    background-color: #b1b1b1;
+
+}
+
+#cabecalho{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+    margin: 0 auto;
+    background-color: black;
+    height: 75px;
+    width: 75%;
+    border-radius: 15px;
+}
+
+#box {
+    justify-content: center;
+    margin: 50px 415px;
+    background: white;
+    border-radius: 50px;
+    height: 750px;
+    width: 1000px;
+}
+
+#box #top{
+    float: left;
+    padding-top: 75px;
+}
+
+
+#separ{
+    padding-left: 50px;
+    padding-top: 75px;
+}
+
+
+.purple_box{
+    text-align: center;
+    font-size: 20px;
+    width: 50px;
+    height: 35px;
+}
+
+.purple_box_mor{
+    text-align: center;
+    font-size: 20px;
+    width: 500px;
+    height: 35px;
+}
+
+.centraliza{
+    display: flex;
+    justify-content: center;
+}
+
+#calcular{
+    color: white;
+    background-color: black;
+    padding: 10px 20px;
+    margin-top: 30px;
+}
+
+#linha_horizontal{
+    display: flex;
+    margin: 20px auto;
+    width: 875px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.396);
+}
+
+#socorro{
+    width: 100%;
+    text-align: left;
+}
+
+#resultado{
+    margin-left: 200px;
+    list-style: none;
+    font-size: 20px;
+}
