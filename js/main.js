@@ -1,6 +1,7 @@
 
 function calcular(){
-    let contador, a = 0;
+    let contador;
+    let a = 0;
     let exp = parseInt(document.getElementById("potencia").value);
     let epsl = Math.abs(parseInt(document.getElementById("epls").value));
     const valoresDeX = document
