@@ -1,5 +1,6 @@
 body{
-    background-color: #b1b1b1;
+   background: rgb(238, 174, 202);
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(70,106,182,1) 100%);
 }
 input{
     background: #c8a6ff;
@@ -14,12 +15,6 @@ input{
     text-align: center;
     min-height: 100vh;
   }
-
-
-#conainer{
-    background-color: #b1b1b1;
-
-}
 
 #cabecalho{
     display: flex;
@@ -59,6 +54,13 @@ input{
     text-align: center;
     font-size: 20px;
     width: 50px;
+    height: 35px;
+}
+
+.purple_box_2{
+    text-align: center;
+    font-size: 20px;
+    width: 75px;
     height: 35px;
 }
 

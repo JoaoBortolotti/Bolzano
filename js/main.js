@@ -1,9 +1,7 @@
 
-function calcular(){
-    const li = $("resultado")
-    li.empty();
-
-    let contador, a = 0;
+function calcular(){    
+    let a = 0;
+    let contador
     let exp = parseInt(document.getElementById("potencia").value);
     let epsl = Math.abs(parseInt(document.getElementById("epls").value));
     const valoresDeX = document
@@ -13,30 +11,33 @@ function calcular(){
 
     if (valoresDeX.length !== exp + 1) {
         document.getElementById("resultado").innerHTML =
-        "NOJOSADIOANDINAOWIDAWD"
+        "Valor do expoente não correspode com Números informados."
         return;
     }
+    const min_max = document
+        .getElementById("min_max")
+        .value.split(',')
+        .map(Number);
     
+    let min = Math.abs(min_max[0]);
+    let max = Math.abs(min_max[1]);
+    let tamanho = min+max+1;
     epsl = Math.pow(10, -epsl);
-    const valores = new Array(11);
+    const valores = new Array(tamanho);
     const variacoes = new Array(exp + 1);
-    const dominioB = new Array(22);
-    const dominioA = new Array(22);
+    const dominioB = new Array(tamanho*2);
+    const dominioA = new Array(tamanho*2);
 
+    /*Alimentar um Array */
     for (contador = 0; contador < valores.length; ++contador) {
-        valores[contador] = contador -5;
+        valores[contador] = contador - max;
     }
     
-    console.log(valores);
-    
-    
-
-    /* Calculando "X" das Funções */
     for (let contador = 0; contador < valores.length; contador++){
         let result = 0;
-        for (let cont = 0; cont < valoresDeX.length; cont++) {
-            result = (Math.pow(valores[contador], cont) * valoresDeX[cont] + result);
-        }
+            for (let cont = 0; cont < valoresDeX.length; cont++){
+                result = (Math.pow(valores[contador], cont)* valoresDeX[cont] + result);
+            }
         variacoes[contador] = result;
     }
 
@@ -102,6 +103,7 @@ function calcular(){
         }
     }
 }
+
 
 
     
